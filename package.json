@@ -1,0 +1,11 @@
+{
+  "name": "httpc",
+  "version": "1.0.0",
+  "description": "add arg '-c' for https ",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Chencong",
+  "license": "ISC"
+}
