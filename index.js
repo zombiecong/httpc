@@ -54,7 +54,7 @@ Automatically search cert(*.crt) and key(*.key) in certPath, Use http if without
                                 key: fs.readFileSync(key),
                                 cert: fs.readFileSync(cert)
                             };
-                            return https.createServer(koa,ssl);
+                            return https.createServer(ssl,koa);
                         } else {
                             Log(NoCertAndKey);
                         }
