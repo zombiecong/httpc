@@ -1,5 +1,4 @@
 'use strict';
 
-const server = require('./index')("abc.js");
+const server = require('./index')(xx,"abc.js");
 
-console.log(server)
