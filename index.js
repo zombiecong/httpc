@@ -1,6 +1,6 @@
 'use strict';
 
-function initServer(execFile,usage)
+function initServer(koa,execFile,usage)
 {
     const UsageError = usage || `Usage : node ${execFile} [-c certPath]
     [options]
@@ -54,7 +54,7 @@ Automatically search cert(*.crt) and key(*.key) in certPath, Use http if without
                                 key: fs.readFileSync(key),
                                 cert: fs.readFileSync(cert)
                             };
-                            return https.createServer(ssl);
+                            return https.createServer(koa,ssl);
                         } else {
                             Log(NoCertAndKey);
                         }
@@ -72,7 +72,7 @@ Automatically search cert(*.crt) and key(*.key) in certPath, Use http if without
             Log(UsageError);
         }
     }else if(process.argv.length ===2){
-        return http.createServer();
+        return http.createServer(koa);
     }else{
         Log(UsageError);
     }
